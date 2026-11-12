@@ -93,6 +93,39 @@ function initlab_field_discord_invite_url_cb($args) {
     initlab_field_text_template($args, 32);
 }
 
+function initlab_field_discord_sync_enabled_cb($args) {
+    $options = get_option('initlab_options', []);
+    $last_sync = get_option('initlab_discord_last_sync', []);
+    ?>
+    <label>
+        <input type="checkbox" id="<?php echo esc_attr($args['label_for']); ?>" name="initlab_options[<?php echo esc_attr($args['label_for']); ?>]" value="1" <?php checked(!empty($options[$args['label_for']])); ?>>
+        <?php esc_html_e('Keep the Discord events in sync with the published upcoming events', 'initlab-addons'); ?>
+    </label>
+    <?php
+    if (!empty($last_sync['time'])) {
+        ?>
+    <p class="description">
+        <?php
+        echo esc_html(sprintf(
+            /* translators: %s: date and time */
+            __('Last full sync: %s.', 'initlab-addons'),
+            wp_date(get_option('date_format') . ' ' . get_option('time_format'), $last_sync['time'])
+        ));
+        if (!empty($last_sync['error'])) {
+            echo ' ' . esc_html($last_sync['error']);
+        } elseif (!empty($last_sync['failed'])) {
+            echo ' ' . esc_html(sprintf(
+                /* translators: %d: number of events */
+                __('Events that could not be synced: %d (see the Discord box on each event).', 'initlab-addons'),
+                $last_sync['failed']
+            ));
+        }
+        ?>
+    </p>
+        <?php
+    }
+}
+
 /**
  * custom option and settings
  */
@@ -197,6 +230,19 @@ function initlab_settings_init() {
         'initlab_section_discord',
         [
             'label_for' => 'discord_invite_url',
+        ]
+    );
+
+    // Register a new field in the "initlab_section_discord" section, inside the "initlab" page.
+    add_settings_field(
+        'initlab_field_discord_sync_enabled', // As of WP 4.6 this value is used only internally.
+                                           // Use $args' label_for to populate the id inside the callback.
+        __('Event sync', 'initlab-addons'),
+        'initlab_field_discord_sync_enabled_cb',
+        'initlab',
+        'initlab_section_discord',
+        [
+            'label_for' => 'discord_sync_enabled',
         ]
     );
 }
