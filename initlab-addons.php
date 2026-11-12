@@ -3,7 +3,7 @@
  * Plugin Name: init Lab Addons
  * Plugin URI:  https://github.com/initlab/initlab-addons
  * Description: Widgets and other features for init Lab's website
- * Version:     2.6.3
+ * Version:     2.6.4
  * Author:      Vencislav Atanasov
  * Author URI:  https://gitlab.com/user890104
  * Text Domain: initlab-addons
