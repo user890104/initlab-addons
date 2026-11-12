@@ -116,3 +116,33 @@ msgstr ""
 #. Description of the plugin
 msgid "Widgets and other features for init Lab's website"
 msgstr ""
+
+#: settings.php:240
+msgid "Event sync"
+msgstr ""
+
+#: settings.php:102
+msgid "Keep the Discord events in sync with the published upcoming events"
+msgstr ""
+
+#: settings.php:111
+#, php-format
+msgid "Last full sync: %s."
+msgstr ""
+
+#: settings.php:119
+#, php-format
+msgid "Events that could not be synced: %d (see the Discord box on each event)."
+msgstr ""
+
+#: discord-sync.php:543
+msgid "The last sync with Discord failed:"
+msgstr ""
+
+#: discord-sync.php:552
+msgid "View this event on Discord"
+msgstr ""
+
+#: discord-sync.php:556
+msgid "Not on Discord. Published upcoming events that are not tagged \"private\" are added within a few minutes."
+msgstr ""

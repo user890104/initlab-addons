@@ -120,3 +120,33 @@ msgstr "Венцислав Атанасов"
 #. Description of the plugin
 msgid "Widgets and other features for init Lab's website"
 msgstr "Джаджи и други функционалности за сайта на Инит Лаб"
+
+#: settings.php:240
+msgid "Event sync"
+msgstr "Синхронизация на събитията"
+
+#: settings.php:102
+msgid "Keep the Discord events in sync with the published upcoming events"
+msgstr "Поддържане на събитията в Дискорд в синхрон с публикуваните предстоящи събития"
+
+#: settings.php:111
+#, php-format
+msgid "Last full sync: %s."
+msgstr "Последна пълна синхронизация: %s."
+
+#: settings.php:119
+#, php-format
+msgid "Events that could not be synced: %d (see the Discord box on each event)."
+msgstr "Събития, които не можаха да бъдат синхронизирани: %d (вижте кутията „Discord“ при всяко събитие)."
+
+#: discord-sync.php:543
+msgid "The last sync with Discord failed:"
+msgstr "Последната синхронизация с Дискорд беше неуспешна:"
+
+#: discord-sync.php:552
+msgid "View this event on Discord"
+msgstr "Преглед на събитието в Дискорд"
+
+#: discord-sync.php:556
+msgid "Not on Discord. Published upcoming events that are not tagged \"private\" are added within a few minutes."
+msgstr "Не е в Дискорд. Публикуваните предстоящи събития без етикет „private“ се добавят до няколко минути."
